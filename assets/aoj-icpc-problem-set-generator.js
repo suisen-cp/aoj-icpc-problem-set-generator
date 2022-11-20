@@ -108,7 +108,7 @@ $("#submit-btn").click(function () {
         source4: include_jag_other,              // 出典にJAG模擬国内以外を含める
     };
 
-    const url = new URL("http://aoj-icpc.ichyo.jp/?" + new URLSearchParams(query_param).toString());
+    const url = new URL("aoj-icpc.ichyo.jp/?" + new URLSearchParams(query_param).toString());
 
     let xhr = new XMLHttpRequest();
 
