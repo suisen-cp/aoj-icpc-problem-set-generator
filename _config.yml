@@ -1,0 +1,13 @@
+domain: suisen-cp.github.io
+baseurl: /apps/
+url: https://suisen-cp.github.io
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+apps:
+  aoj-icpc-problem-set-generator:
+    title: AOJ-ICPC problem set generator
+    description: Generates problem sets on AOJ-ICPC
+    url: aoj-icpc-problem-set-generator
