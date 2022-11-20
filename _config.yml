@@ -6,7 +6,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-aoj-icpc-problem-set-generator:
+atcoder-virtual-contest-generator:
   title: AOJ-ICPC problem set generator
   description: Generates problem sets on AOJ-ICPC
-  url: aoj-icpc-problem-set-generator
+  url: atcoder-virtual-contest-generator

@@ -1,124 +1,85 @@
 ---
 layout: page
-title: AOJ-ICPC Problem Set Generator
+title: AtCoder Virtual Contest Generator
 scripts:
-- ./assets/aoj-icpc-problem-set-generator.js
+- ./assets/atcoder-virtual-contest-generator.js
 ---
 
-<h4>配点</h4>
+<h4>Difficulty <button type="submit" class="btn btn-danger" id="reset-diff">reset</button> </h4>
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th scope="col" class="table-entry">point</td>
-                <th scope="col" class="table-entry">未分類</th>
-                <th scope="col" class="table-entry">100</th>
-                <th scope="col" class="table-entry">150</th>
-                <th scope="col" class="table-entry">200</th>
-                <th scope="col" class="table-entry">250</th>
-                <th scope="col" class="table-entry">300</th>
-                <th scope="col" class="table-entry">350</th>
-                <th scope="col" class="table-entry">400</th>
-                <th scope="col" class="table-entry">450</th>
-                <th scope="col" class="table-entry">500</th>
-                <th scope="col" class="table-entry">550</th>
-                <th scope="col" class="table-entry">600</th>
-                <th scope="col" class="table-entry">700</th>
-                <th scope="col" class="table-entry">800</th>
-                <th scope="col" class="table-entry">900</th>
-                <th scope="col" class="table-entry">1000</th>
-                <th scope="col" class="table-entry">1100</th>
-                <th scope="col" class="table-entry">1200+</th>
+                <th scope="col" class="table-entry">difficulty</td>
+                <th scope="col" class="table-entry"><span class="difficulty-circle black"></span>Unrated</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle gray"></span>0~400</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle brown"></span>400~800</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle green"></span>800~1200</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle cyan"></span>1200~1600</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle blue"></span>1600~2000</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle yellow"></span>2000~2400</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle orange"></span>2400~2800</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle red"></span>2800~3200</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle bronze"></span>3200~3600</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle silver"></span>3600~4000</th>
+                <th scope="col" class="table-entry"><span class="difficulty-circle gold"></span>4000~inf</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td scope="row" class="table-entry">問題数</td>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-uncategorized' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-black' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-100' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-gray' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-150' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-brown' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-200' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-green' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-250' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-cyan' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-300' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-blue' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-350' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-yellow'
+                    %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-400' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-orange'
+                    %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-450' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-red' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-500' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-bronze'
+                    %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-550' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-silver'
+                    %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-600' %}
+                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-gold' %}
                 </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-700' %}
-                </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-800' %}
-                </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-900' %}
-                </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-1000' %}
-                </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-1100' %}
-                </th>
-                <th scope="col" class="table-entry">{% include_relative module/number_input.html id='input-num-1200-over' %}
                 </th>
             </tr>
         </tbody>
     </table>
 </div>
 
-<h4>出典</h4>
-<div>
-    <input type="checkbox" id="input-domestic" checked> <label for="input-domestic" class="form-label">国内予選</label>
-</div>
-<div>
-    <input type="checkbox" id="input-regional" checked> <label for="input-regional" class="form-label">アジア地区予選</label>
-</div>
-<div>
-    <input type="checkbox" id="input-jag-domestic" checked> <label for="input-jag-domestic"
-        class="form-label">JAG模擬国内</label>
-</div>
-<div>
-    <input type="checkbox" id="input-jag-other" checked> <label for="input-jag-other"
-        class="form-label">JAG模擬国内以外</label>
-</div>
-<h4>年代</h4>
+<h4>出典 <button type="submit" class="btn btn-danger" id="reset-src">reset</button></h4>
+{% include_relative module/source_input.html id='input-abc' label='ABC, ABC-Like' %}
+{% include_relative module/source_input.html id='input-arc' label='ARC, ARC-Like' %}
+{% include_relative module/source_input.html id='input-agc' label='AGC, AGC-Like' %}
+{% include_relative module/source_input.html id='input-other' label='Other' %}
 
-<div>
-    <div class="row g-4">
-        <div class="col-auto">
-            <label for="input-year-min" class="form-label">年代の下限</label>
-        </div>
-        <div class="col-auto">
-            <input type="number" id="input-year-min" class="form-control">
-        </div>
-    </div>
-</div>
-<div style="padding-top: 0.5em;">
-    <div class="row g-4">
-        <div class="col-auto">
-            <label for="input-year-min" class="form-label">年代の上限</label>
-        </div>
-        <div class="col-auto">
-            <input type="number" id="input-year-max" class="form-control">
-        </div>
-    </div>
-</div>
+<h4>コンテスト開催時刻 <button type="submit" class="btn btn-danger" id="reset-date">reset</button></h4>
 
-<h4>参加者 (ここに入力したユーザーが解いたことのある問題を除外します)</h4>
+{% include_relative module/date_input.html id='input-date-min' label='Min' %}
+{% include_relative module/date_input.html id='input-date-max' label='Max' %}
+
+<!-- <h4>参加者 (ここに入力したユーザーが解いたことのある問題を除外します)</h4>
 
 <div class="input-group mb-2">
     <button type="button" class="btn btn-primary" id="input-participant-button">Add</button>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="input-participant">
-</div>
+    <input type="text" class="form-control" placeholder="ユーザーID (複数指定は空白区切り)" aria-label="Username"
+        id="input-participant">
+</div> -->
 
 <div id="participants">
 
@@ -126,4 +87,10 @@ scripts:
 
 <div class="w-100">
     <button type="submit" class="btn btn-primary w-100" id="submit-btn">Generate Problem Set</button>
+</div>
+
+<h4>問題セット</h4>
+
+<div id="output">
+
 </div>
